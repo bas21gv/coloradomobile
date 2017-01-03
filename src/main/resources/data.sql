@@ -1,0 +1,2 @@
+CREATE OR DROP table device (gen_id int NOT NULL, device_id varchar(100) NOT NULL,CONSTRAINT device_pk PRIMARY KEY (gen_id));
+CREATE OR DROP table notification (notification_id int NOT NULL, device_id VARCHAR(100) NOT NULL, message VARCHAR(100) NOT NULL, CONSTRAINT notification_pk PRIMARY KEY (notification_id));
