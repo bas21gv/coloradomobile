@@ -1,26 +1,30 @@
 package com.cts.coloradomobile.pojo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="notification")
-public class Notification {
+public class Notification implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5350509038298233112L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="notification_id")
 	private Integer id;
 	
-	@Column(name="device_id", nullable=false)
+	@Column
 	private String deviceId;
 	
-	@Column(name="message", nullable=false)
+	@Column
 	private String message;
 	
 	public Notification() {

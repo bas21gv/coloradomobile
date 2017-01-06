@@ -1,5 +1,7 @@
 package com.cts.coloradomobile.pojo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,14 +11,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="device")
-public class Device {
+public class Device implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1837973306944376873L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="gen_id")
 	private Integer id;
 	
-	@Column(name="device_id", nullable=false)
+	@Column
 	private String deviceId;
 	
 	public Device() {
